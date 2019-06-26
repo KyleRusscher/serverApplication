@@ -1,0 +1,27 @@
+{
+    "account_taken": {
+        "responseCode": 403,
+        "status": "rejected",
+        "message": "that username is already taken"
+    },
+    "created_succesfully": {
+        "responseCode": 200,
+        "status": "successful",
+        "message": "the account has been created"
+    },
+    "login_unsuccessful": {
+        "responseCode": 401,
+        "status": "rejected",
+        "message": "credentials were incorrect"
+    },
+    "login_successful": {
+        "responseCode": 200,
+        "status": "successful",
+        "message": "the login attempt was a success"
+    },
+    "internal_service_error": {
+        "responseCode": 500,
+        "status": "internal service error",
+        "message": "somethign unexpected went wrong"
+    }
+}
