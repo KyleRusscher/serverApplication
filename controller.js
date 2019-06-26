@@ -7,8 +7,6 @@ async function tryToAddAccount(headers){
     const sqlInsert = "INSERT INTO ttdata.account_data (username, password, date_created)"+
             ` VALUES ('${headers.username}', '${headers.password}', '${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}');`
     const data = await accountsDAO.query(sqlQuery);
-    console.log(data)
-    console.log(headers.username)
     if(data.length > 0){
         return responseCodes.account_taken;
     } 
@@ -19,7 +17,6 @@ async function tryToAddAccount(headers){
 async function login(headers){
     const sqlQuery = `select * from ttdata.account_data where username = '${headers.username}' and password = '${headers.password}'`;
     const data = await accountsDAO.query(sqlQuery);
-    console.log(data)
     if(data.length == 1){
         responseCodes.login_successful.account_data = data 
         return responseCodes.login_successful;
