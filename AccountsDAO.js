@@ -1,11 +1,12 @@
 const mysql = require("mysql");
 const util = require('util');
+const credentials = require('./credentials')
 
 function getConnection() {
   var connection = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "Mindy8109"
+    user: credentials.user,
+    password: credentials.pass
   });
   connection.connect(function(err) {
     if (err) throw err;
